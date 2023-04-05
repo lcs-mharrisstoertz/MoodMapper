@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		CC9E695829DDD2BD009DF5CD /* MoodMapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E695729DDD2BD009DF5CD /* MoodMapperApp.swift */; };
-		CC9E695A29DDD2BD009DF5CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E695929DDD2BD009DF5CD /* ContentView.swift */; };
 		CC9E695C29DDD2C2009DF5CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9E695B29DDD2C2009DF5CD /* Assets.xcassets */; };
 		CC9E695F29DDD2C2009DF5CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9E695E29DDD2C2009DF5CD /* Preview Assets.xcassets */; };
+		CC9E696629DDD307009DF5CD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E696529DDD307009DF5CD /* ListView.swift */; };
+		CC9E696A29DDD753009DF5CD /* CurrentMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E696929DDD753009DF5CD /* CurrentMood.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC9E695429DDD2BD009DF5CD /* MoodMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9E695729DDD2BD009DF5CD /* MoodMapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodMapperApp.swift; sourceTree = "<group>"; };
-		CC9E695929DDD2BD009DF5CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC9E695B29DDD2C2009DF5CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9E695E29DDD2C2009DF5CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CC9E696529DDD307009DF5CD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CC9E696929DDD753009DF5CD /* CurrentMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMood.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				CC9E695729DDD2BD009DF5CD /* MoodMapperApp.swift */,
-				CC9E695929DDD2BD009DF5CD /* ContentView.swift */,
+				CC9E696729DDD311009DF5CD /* Views */,
+				CC9E696829DDD726009DF5CD /* Model */,
 				CC9E695B29DDD2C2009DF5CD /* Assets.xcassets */,
 				CC9E695D29DDD2C2009DF5CD /* Preview Content */,
 			);
@@ -65,6 +68,22 @@
 				CC9E695E29DDD2C2009DF5CD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CC9E696729DDD311009DF5CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC9E696529DDD307009DF5CD /* ListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC9E696829DDD726009DF5CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC9E696929DDD753009DF5CD /* CurrentMood.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9E695A29DDD2BD009DF5CD /* ContentView.swift in Sources */,
 				CC9E695829DDD2BD009DF5CD /* MoodMapperApp.swift in Sources */,
+				CC9E696A29DDD753009DF5CD /* CurrentMood.swift in Sources */,
+				CC9E696629DDD307009DF5CD /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
