@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC79EF3F29E4BADC00744332 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = CC79EF3E29E4BADC00744332 /* Blackbird */; };
+		CC79EF4129E4BB2700744332 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC79EF4029E4BB2700744332 /* AppDatabase.swift */; };
 		CC9E695829DDD2BD009DF5CD /* MoodMapperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E695729DDD2BD009DF5CD /* MoodMapperApp.swift */; };
 		CC9E695C29DDD2C2009DF5CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9E695B29DDD2C2009DF5CD /* Assets.xcassets */; };
 		CC9E695F29DDD2C2009DF5CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9E695E29DDD2C2009DF5CD /* Preview Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC79EF3C29E4B98900744332 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		CC79EF4029E4BB2700744332 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		CC9E695429DDD2BD009DF5CD /* MoodMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9E695729DDD2BD009DF5CD /* MoodMapperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodMapperApp.swift; sourceTree = "<group>"; };
 		CC9E695B29DDD2C2009DF5CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC79EF3F29E4BADC00744332 /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +86,9 @@
 		CC9E696829DDD726009DF5CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CC79EF3C29E4B98900744332 /* db.sqlite */,
 				CC9E696929DDD753009DF5CD /* CurrentMood.swift */,
+				CC79EF4029E4BB2700744332 /* AppDatabase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +109,9 @@
 			dependencies = (
 			);
 			name = MoodMapper;
+			packageProductDependencies = (
+				CC79EF3E29E4BADC00744332 /* Blackbird */,
+			);
 			productName = MoodMapper;
 			productReference = CC9E695429DDD2BD009DF5CD /* MoodMapper.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +140,9 @@
 				Base,
 			);
 			mainGroup = CC9E694B29DDD2BD009DF5CD;
+			packageReferences = (
+				CC79EF3D29E4BADC00744332 /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = CC9E695529DDD2BD009DF5CD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,6 +171,7 @@
 			files = (
 				CC9E695829DDD2BD009DF5CD /* MoodMapperApp.swift in Sources */,
 				CC9E696A29DDD753009DF5CD /* CurrentMood.swift in Sources */,
+				CC79EF4129E4BB2700744332 /* AppDatabase.swift in Sources */,
 				CC9E696629DDD307009DF5CD /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC79EF3D29E4BADC00744332 /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC79EF3E29E4BADC00744332 /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC79EF3D29E4BADC00744332 /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC9E694C29DDD2BD009DF5CD /* Project object */;
 }

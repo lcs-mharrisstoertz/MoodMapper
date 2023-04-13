@@ -5,15 +5,23 @@
 //  Created by Morgan Harris-Stoertz on 2023-04-05.
 //
 
+import Blackbird
 import Foundation
 
-struct CurrentMood: Identifiable{
-    var id: Int
-    var description: String
+struct CurrentMood: BlackbirdModel {
+    @BlackbirdColumn var id: Int
+    @BlackbirdColumn var description: String
+    @BlackbirdColumn var emoji: String
 }
 
-var existingTodoItems = [
-CurrentMood(id: 1, description: "Angry"),
-CurrentMood(id: 2, description: "Happy"),
-CurrentMood(id: 3, description: "Sad"),
-]
+//struct CurrentMood: Identifiable{
+//    var id: Int
+//    var description: String
+//    var completed: Bool
+//}
+//
+//var existingCurrentMood = [
+//    CurrentMood(id: 1, description: "Angry", completed: false),
+//    CurrentMood(id: 2, description: "Happy",  completed: true),
+//    CurrentMood(id: 3, description: "Sad", completed: false),
+//]

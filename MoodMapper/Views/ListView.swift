@@ -4,11 +4,15 @@
 //
 //  Created by Morgan Harris-Stoertz on 2023-04-05.
 //
-
+import Blackbird
 import SwiftUI
 
 struct ListView: View {
     //MARK: stored properties
+    //the item currently being stored
+    @BlackbirdLiveModels({db in
+        try await CurrentMood.read(from: db)
+    }) var currentMoods
     // the item currently being added
     @State var newItemDescription: String = ""
     
@@ -22,15 +26,17 @@ struct ListView: View {
                 }
                 HStack{
                     TextField("Enter your current mood ...", text: $newItemDescription)
-            
+                    
                     //button
                     Button(action: {
-                        Task{
-                            //task to be filled in ..
-                            
-                        //clear the input field
-                            newItemDescription = ""
-                        }
+                        //                        let lastId = currentMoods.last!.id
+                        //                        let newId = lastId + 1
+                        //                        let newCurrentMood = CurrentMood(id: newId,
+                        //                                                         description: newItemDescription,
+                        //                                                         completed: false)
+                        //
+                        //                        currentMoods.append(newCurrentMood)
+                        //                        newItemDescription = ""
                     }, label: {
                         Text("ADD")
                             .font(.caption)
@@ -40,24 +46,17 @@ struct ListView: View {
                 .padding(20)
                 
                 //List
+          
                 
-                List{
-                    HStack{
-                       
-                        Text("Happy")
-                    }
-                    
-                    HStack{
-                       
-                        Text("Sad")
-                    }
-                    
-                    HStack{
-                     
-                        Text("Tired")
-                    }
+                List(currentMoods.results){currentMood in
+
+                        HStack{
+                            Text(currentMood.emoji)
+                            Text(currentMood.description)
+                        }
+
                 }
-              
+                
                 
             }
             .navigationTitle("Mood Mapper")
