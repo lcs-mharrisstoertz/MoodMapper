@@ -10,11 +10,15 @@ import SwiftUI
 struct ListView: View {
     //MARK: stored properties
     //the item currently being stored
+    @Environment(\.blackbirdDatabase) var db:Blackbird.Database?
+    
     @BlackbirdLiveModels({db in
         try await CurrentMood.read(from: db)
     }) var currentMoods
+    
     // the item currently being added
     @State var newItemDescription: String = ""
+    @State var newEmojiDescription: String = ""
     
     //MARK: computed properties
     var body: some View {
@@ -28,33 +32,45 @@ struct ListView: View {
                     TextField("Enter your current mood ...", text: $newItemDescription)
                     
                     //button
+                    
                     Button(action: {
-                        //                        let lastId = currentMoods.last!.id
-                        //                        let newId = lastId + 1
-                        //                        let newCurrentMood = CurrentMood(id: newId,
-                        //                                                         description: newItemDescription,
-                        //                                                         completed: false)
-                        //
-                        //                        currentMoods.append(newCurrentMood)
-                        //                        newItemDescription = ""
+                        Task{
+                            //write to the data base
+                            try await db!.transaction { core in
+                                try core.query("INSERT INTO CurrentMood (description, emoji) VALUES (??)", newItemDescription, newEmojiDescription)
+                            }
+                            
+                        //clear the input field
+                            newItemDescription = ""
+                            newEmojiDescription = ""
+                        }
                     }, label: {
                         Text("ADD")
                             .font(.caption)
                     })
                     
                 }
-                .padding(20)
+                
+                
+                HStack{
+                    TextField("Enter an emoji ...", text: $newEmojiDescription)
+                    
+                 
+                }
+                
+                
+                
                 
                 //List
-          
+                
                 
                 List(currentMoods.results){currentMood in
-
-                        HStack{
-                            Text(currentMood.emoji)
-                            Text(currentMood.description)
-                        }
-
+                    
+                    HStack{
+                        Text(currentMood.emoji)
+                        Text(currentMood.description)
+                    }
+                    
                 }
                 
                 
@@ -68,5 +84,6 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         ListView()
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }
