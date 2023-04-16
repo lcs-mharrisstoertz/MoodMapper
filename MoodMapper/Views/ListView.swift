@@ -63,15 +63,17 @@ struct ListView: View {
                 
                 //List
                 
-                
-                List(currentMoods.results){currentMood in
-                    
-                    HStack{
-                        Text(currentMood.emoji)
-                        Text(currentMood.description)
+                List{
+                    ForEach(currentMoods.results){currentMood in
+                        
+                        HStack{
+                            Text(currentMood.emoji)
+                            Text(currentMood.description)
+                        }
+                        
                     }
-                    
                 }
+               
                 
                 
             }
