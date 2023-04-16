@@ -15,6 +15,7 @@
 		CC9E696629DDD307009DF5CD /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E696529DDD307009DF5CD /* ListView.swift */; };
 		CC9E696A29DDD753009DF5CD /* CurrentMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E696929DDD753009DF5CD /* CurrentMood.swift */; };
 		CCDAFD7D29E867F000AA2D7C /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CCDAFD7C29E867F000AA2D7C /* db.sqlite */; };
+		CCDAFDA229EC4BD500AA2D7C /* ListMoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDAFDA129EC4BD500AA2D7C /* ListMoodsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CC9E696529DDD307009DF5CD /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		CC9E696929DDD753009DF5CD /* CurrentMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentMood.swift; sourceTree = "<group>"; };
 		CCDAFD7C29E867F000AA2D7C /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		CCDAFDA129EC4BD500AA2D7C /* ListMoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMoodsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				CC9E696529DDD307009DF5CD /* ListView.swift */,
+				CCDAFDA129EC4BD500AA2D7C /* ListMoodsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCDAFDA229EC4BD500AA2D7C /* ListMoodsView.swift in Sources */,
 				CC9E695829DDD2BD009DF5CD /* MoodMapperApp.swift in Sources */,
 				CC9E696A29DDD753009DF5CD /* CurrentMood.swift in Sources */,
 				CC79EF4129E4BB2700744332 /* AppDatabase.swift in Sources */,

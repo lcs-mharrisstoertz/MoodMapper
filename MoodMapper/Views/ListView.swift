@@ -13,12 +13,15 @@ struct ListView: View {
     @Environment(\.blackbirdDatabase) var db:Blackbird.Database?
     
     @BlackbirdLiveModels({db in
-        try await CurrentMood.read(from: db)
+        try await CurrentMood.read(from: db,
+                                   sqlWhere: "description LIKE ?", "%\(searchText)%")
     }) var currentMoods
     
     // the item currently being added
     @State var newItemDescription: String = ""
     @State var newEmojiDescription: String = ""
+    @State var searchText = ""
+    
     
     //MARK: computed properties
     var body: some View {
@@ -74,6 +77,7 @@ struct ListView: View {
                     
                     .onDelete(perform: removeRows)
                 }
+                .searchable(text: $searchText)
              
             }
             .navigationTitle("Mood Mapper")
